@@ -1,0 +1,17 @@
+{
+  "name": "example",
+  "main": "index.js",
+  "authors": [
+    "aminsh <aminsheikhi@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

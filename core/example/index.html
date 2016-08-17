@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Test core</title>
+
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/linqjs/linq.min.js"></script>
+    <script src="bower_components/js-helper/dist/jshelper.bundle.min.js"></script>
+
+    <script src='jspm_packages/system.js'></script>
+    <script src='config.js'></script>
+    <script>
+        System.import('index');
+    </script>
+
+    <script src="index.js"></script>
+</head>
+<body ng-app="core.module">
+<div ng-controller="homeCtrl">
+    <h1>{{title}}</h1>
+</div>
+</body>
+</html>

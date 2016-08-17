@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="../dist/vendor.bundle.js"></script>
+
+    <script>
+        require('jquery');
+        require('js-helper');
+        require('JalaliDate');
+    </script>
+    <script src="../dist/core.bundle.js"></script>
+    <script src="../dist/core.template.bundle.js"></script>
+
+
+</head>
+<body ng-app="app">
+<script>
+    debugger;
+    var app = angular.module('app', ['core.module']);
+    app.controller('homeCtrl', function ($scope) {
+        $scope.title = "Home";
+    });
+</script>
+
+<div ng-controller="homeCtrl">
+
+    <dev-tag-content title="{{title}}"></dev-tag-content>
+</div>
+</body>
+</html>

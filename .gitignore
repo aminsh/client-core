@@ -26,25 +26,11 @@ build/Release
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
-uploads
 .idea
 bin
 obj
 Properties
 
 core/bower_components
-core/lib
-core/src
-core/templates
-core/example
-accounting/src
 
-
-vendor.path.setting.json
-gulpfile.js
-*.cs
-App.config
-DevStorm.Client.Web.csproj
-DevStorm.Client.Web.csproj.user
-DevStorm.Client.Web.csproj.vspscc
 

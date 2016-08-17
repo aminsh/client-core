@@ -1,0 +1,29 @@
+{
+  "name": "js-helper",
+  "homepage": "https://github.com/aminsh/js-helper",
+  "authors": [
+    "Amin sheikhi <aminsheikhi@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.9.1",
+    "linqjs": "~3.0.5"
+  },
+  "_release": "d103afbe85",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d103afbe85b36dec29d41a1a3a975cb3f82d9c2f"
+  },
+  "_source": "https://github.com/aminsh/js-helper.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/aminsh/js-helper.git",
+  "_direct": true
+}

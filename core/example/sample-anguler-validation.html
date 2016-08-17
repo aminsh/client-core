@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="../dist/vendor.bundle.js"></script>
+    <script>
+
+
+        require('js-helper');
+        window.jQuery = require('jquery');
+        window.angular = require('angular');
+        require('JalaliDate');
+    </script>
+
+    <script src="../bower_components/angular-validation/dist/angular-validation.js"></script>
+    <script src="../bower_components/angular-validation/dist/angular-validation-rule.js"></script>
+    <script src="../dist/core.bundle.js"></script>
+
+    <link href="../dist/css/kendo/kendo.common.min.css" rel="stylesheet">
+    <link href="../dist/css/kendo/kendo.bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body ng-app="app">
+
+<script>
+    function successCallBack() {
+        debugger;
+    }
+    function errorCallBack() {
+        debugger;
+    }
+    angular.module('app', ['validation', 'validation.rule', 'core.module'])
+        /*.config(function ($validationProvider) {
+         $validationProvider.validate(form)
+         .success(successCallBack)
+         .error(errorCallBack);
+         })*/
+            .directive('devTagText', function () {
+                return {
+                    restrict: 'E',
+                    replace: true,
+                    template: '<input type="text" />',
+                    scope: {
+                        show: '='
+                    },
+                    link: function (scope, element, attrs) {
+
+                    }
+                }
+            })
+            /*.directive('devTagContent', function () {
+                return {
+                    restrict: 'E',
+                    replace: true,
+                    template: '<div style="border: blue" ng-transclude></div>',
+                    transclude: true,
+                    link: function (scope, element, attrs) {
+                        debugger;
+                    }
+                }
+            })*/
+            .controller('ctrl', function ($scope, $validation) {
+                $scope.form = {
+                    submit: function (form) {
+                        $validation.validate(form);
+                    }
+                }
+
+                $scope.status = [
+                    {
+                        key: 1, value: 'good'
+                    },
+                    {
+                        key: 2, value: 'bad'
+                    }
+                ]
+
+                $scope.model = {
+                    status: null
+                }
+
+                $scope.emptyStatus = function () {
+                    $scope.model.status = null;
+                }
+            });
+
+</script>
+
+<div ng-controller="ctrl">
+    <form name="Form">
+        <input type="text" name="number" ng-model="form.number" validator="number" valid-method="submit-only"/>
+        <dev-tag-text
+                name="number2"
+                ng-model="form.number2"
+                validator="required"
+                valid-method="submit-only"
+                show="true"
+                required-error-message="dev tag text is not required"></dev-tag-text>
+
+        <!--<dev-tag-content>
+            <dev-tag-text name="number3"
+                          ng-model="form.number3"
+                          validator="number"
+                          valid-method="submit-only"
+                          show="true"
+                    ></dev-tag-text>
+        </dev-tag-content>-->
+
+        <!--<dev-tag-dropdownlist
+                data="status"
+                ng-model="model.status"
+                value-field="key"
+                text-field="value"
+                ng-model="model.status"
+                name="status"
+                validator="required"
+                valid-method="submit-method"></dev-tag-dropdownlist>-->
+
+        <select kendo-drop-down-list
+                k-option-label="'Select item ...'"
+                k-data-value-field="'key'"
+                k-data-text-field="'value'"
+                k-data-source="status"
+                ng-model="model.status"
+                name="status"
+                validator="required"
+                valid-method="submit-method"
+                ></select>
+
+        <select ng-model="model.status" name="status"
+                validator="required"
+                valid-method="submit-method">
+            <option ng-repeat="x in status" value="{{x.key}}">{{x.value}}</option>
+        </select>
+
+        <h1>{{model.status}}</h1>
+        <button  ng-click="emptyStatus()">Empty</button>
+        <button ng-click="form.submit(Form)">Submit</button>
+    </form>
+
+</div>
+</body>
+</html>
