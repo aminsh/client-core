@@ -96,7 +96,7 @@ _core2.default.directive('devTagGrid', _gridByKendo2.default);
 _core2.default.directive('devTagHeader', _layoutByJquery.header);
 _core2.default.directive('devTagTogglemenu', _layoutByJquery.togglemenu);
 _core2.default.directive('devTagNumeric', _numeric2.default);
-_core2.default.directive('devTagUploader', _uploaderByPlupload2.default);
+//coreModule.directive('devTagUploader', uploaderByPlupload);
 _core2.default.directive('devTagEditor', _textEditorByKendoEditor2.default);
 _core2.default.directive('devTagCheckBox', _checkBox2.default);
 _core2.default.directive('devTagButton', _button2.default);

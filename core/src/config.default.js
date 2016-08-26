@@ -46,7 +46,7 @@ coreModule.directive('devTagGrid', gridByKendo);
 coreModule.directive('devTagHeader', header);
 coreModule.directive('devTagTogglemenu', togglemenu);
 coreModule.directive('devTagNumeric', numeric);
-coreModule.directive('devTagUploader', uploaderByPlupload);
+//coreModule.directive('devTagUploader', uploaderByPlupload);
 coreModule.directive('devTagEditor', textEditorByKendoEditor);
 coreModule.directive('devTagCheckBox', checkbox);
 coreModule.directive('devTagButton', button);

@@ -4,9 +4,9 @@ function button() {
         templateUrl: 'button-template.html',
         replace: true,
         scope: {
-            isWaiting:'=',
-            icon:'@',
-            styleType:'@',
+            isWaiting: '=',
+            icon: '@',
+            styleType: '@',
             title: '@'
         },
         link: function (scope, element, attrs) {

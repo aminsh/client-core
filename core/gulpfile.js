@@ -36,11 +36,12 @@ gulp.task('build-vendor', function () {
     });
 
     return b
-        .transform('uglifyify')
+        //.transform('uglifyify')
         .bundle()
         .pipe(exorcist(path.join(distPath, 'vendor.bundle.js.map')))
-        .pipe(fs.createWriteStream(path.join(distPath, 'vendor.bundle.min.js'), 'utf8'));
+        .pipe(fs.createWriteStream(path.join(distPath, 'vendor.bundle.js'), 'utf8'));
 });
+
 
 gulp.task('build-core', function () {
     var b = browserify(
